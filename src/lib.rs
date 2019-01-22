@@ -24,13 +24,17 @@ And as an embeddable library to paint SVG on an application native canvas.
 extern crate unicode_segmentation;
 extern crate rgb;
 
-#[cfg(feature = "cairo-backend")] pub extern crate cairo;
+#[cfg(any(feature = "cairo-backend", feature = "piet-backend"))] pub extern crate cairo;
+
 #[cfg(feature = "cairo-backend")] extern crate pango;
 #[cfg(feature = "cairo-backend")] extern crate pangocairo;
 #[cfg(feature = "cairo-backend")] extern crate gdk_pixbuf;
 
 #[cfg(feature = "qt-backend")] pub extern crate resvg_qt as qt;
 
+#[cfg(feature = "piet-backend")] extern crate piet;
+#[cfg(feature = "piet-backend")] extern crate piet_cairo;
+#[cfg(feature = "piet-backend")] extern crate kurbo;
 
 pub use usvg::{
     svgdom,
@@ -42,6 +46,7 @@ use usvg::lyon_geom;
 
 #[cfg(feature = "cairo-backend")] pub mod backend_cairo;
 #[cfg(feature = "qt-backend")] pub mod backend_qt;
+#[cfg(feature = "piet-backend")] pub mod backend_piet;
 
 pub mod utils;
 mod backend_utils;

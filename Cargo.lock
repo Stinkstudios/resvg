@@ -313,6 +313,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "kurbo"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "arrayvec 0.4.10 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
 name = "lazy_static"
 version = "1.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -431,6 +439,24 @@ dependencies = [
 ]
 
 [[package]]
+name = "piet"
+version = "0.1.0"
+source = "git+https://github.com/linebender/piet?rev=29a6c92#29a6c9200d24a65760734ce075e3266c5f6ec628"
+dependencies = [
+ "kurbo 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "piet-cairo"
+version = "0.1.0"
+source = "git+https://github.com/linebender/piet?rev=29a6c92#29a6c9200d24a65760734ce075e3266c5f6ec628"
+dependencies = [
+ "cairo-rs 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "kurbo 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "piet 0.1.0 (git+https://github.com/linebender/piet?rev=29a6c92)",
+]
+
+[[package]]
 name = "pkg-config"
 version = "0.3.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -487,9 +513,12 @@ version = "0.5.0"
 dependencies = [
  "cairo-rs 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "gdk-pixbuf 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "kurbo 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "pango 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "pangocairo 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "piet 0.1.0 (git+https://github.com/linebender/piet?rev=29a6c92)",
+ "piet-cairo 0.1.0 (git+https://github.com/linebender/piet?rev=29a6c92)",
  "resvg-qt 0.5.0",
  "rgb 0.8.11 (registry+https://github.com/rust-lang/crates.io-index)",
  "unicode-segmentation 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -673,6 +702,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum gtk-sys 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)" = "d487d333a4b87072e6bf9f2e55befa0ebef01b9496c2e263c0f4a1ff3d6c04b1"
 "checksum gumdrop 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)" = "395c7c79599167d04e7349ee60cc6cb14a28dfebaf922b4dc41603a7b18c3b28"
 "checksum gumdrop_derive 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)" = "04c43663fd6604d9065f5cd26ae7a0301491fd941ad29b0a01665a6be3a1ddbd"
+"checksum kurbo 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "f77c5f5c9d4ce0da64bf0603bef3f818e75edbe0e5552666892dca27583ecbd3"
 "checksum lazy_static 1.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "a374c89b9db55895453a74c1e38861d9deec0b01b405a82516e9d5de4820dea1"
 "checksum libc 0.2.46 (registry+https://github.com/rust-lang/crates.io-index)" = "023a4cd09b2ff695f9734c1934145a315594b7986398496841c7031a5a1bbdbd"
 "checksum libflate 0.1.19 (registry+https://github.com/rust-lang/crates.io-index)" = "bff3ac7d6f23730d3b533c35ed75eef638167634476a499feef16c428d74b57b"
@@ -686,6 +716,8 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum pangocairo-sys 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)" = "9e79ffb01eae5bc130b44fde529fa493ad6308c340da1358eaa2435ed3580e4f"
 "checksum phf 0.7.24 (registry+https://github.com/rust-lang/crates.io-index)" = "b3da44b85f8e8dfaec21adae67f95d93244b2ecf6ad2a692320598dcc8e6dd18"
 "checksum phf_shared 0.7.24 (registry+https://github.com/rust-lang/crates.io-index)" = "234f71a15de2288bcb7e3b6515828d22af7ec8598ee6d24c3b526fa0a80b67a0"
+"checksum piet 0.1.0 (git+https://github.com/linebender/piet?rev=29a6c92)" = "<none>"
+"checksum piet-cairo 0.1.0 (git+https://github.com/linebender/piet?rev=29a6c92)" = "<none>"
 "checksum pkg-config 0.3.14 (registry+https://github.com/rust-lang/crates.io-index)" = "676e8eb2b1b4c9043511a9b7bea0915320d7e502b0a079fb03f9635a5252b18c"
 "checksum pretty_assertions 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)" = "3a029430f0d744bc3d15dd474d591bed2402b645d024583082b9f63bb936dac6"
 "checksum proc-macro2 0.4.24 (registry+https://github.com/rust-lang/crates.io-index)" = "77619697826f31a02ae974457af0b29b723e5619e113e9397b8b82c6bd253f09"

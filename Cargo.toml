@@ -38,9 +38,15 @@ pangocairo = { version = "0.6", optional = true }
 # qt backend
 resvg-qt = { path = "resvg-qt", version = "0.5.0", optional = true }
 
+# piet backend
+piet = { git = "https://github.com/linebender/piet", rev = "29a6c92", optional = true }
+piet-cairo = { git = "https://github.com/linebender/piet", rev = "29a6c92", optional = true }
+kurbo = { version = "0.2.0", optional = true }
+
 [features]
 cairo-backend = ["cairo-rs", "gdk-pixbuf", "pango", "pangocairo"]
 qt-backend = ["resvg-qt"]
+piet-backend = ["piet", "piet-cairo", "kurbo", "cairo-rs"]
 
 [lib]
 doctest = false
