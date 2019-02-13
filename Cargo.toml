@@ -34,10 +34,10 @@ usvg = "0.4"
 unicode-segmentation = "1.2.1"
 
 # cairo backend
-cairo-rs = { version = "0.5", features = ["png"], optional = true }
-gdk-pixbuf = { version = "0.5", optional = true }
-pango = { version = "0.5", optional = true }
-pangocairo = { version = "0.6", optional = true }
+cairo-rs = { git = "https://github.com/StinkStudios/cairo", tag = "0.5.1", version = "0.5.1", features = ["png"], optional = true }
+gdk-pixbuf = { git = "https://github.com/StinkStudios/gdk-pixbuf", tag = "0.5.1", version = "0.5.1", optional = true }
+pango = { git = "https://github.com/StinkStudios/pango", tag = "0.5.1", version = "0.5.1", optional = true }
+pangocairo = { git = "https://github.com/StinkStudios/pangocairo", tag = "0.6.1", version = "0.6.1", optional = true }
 
 # qt backend
 resvg-qt = { version = "0.4", optional = true }
